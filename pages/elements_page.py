@@ -81,7 +81,7 @@ class WebTablePage(BasePage):
     locators = WebTablePageLocators()
 
     def add_new_person(self):
-        count = 3
+        count = 1
         while count != 0:
             person_info = next(generated_person())
             firstname = person_info.firstname
@@ -102,7 +102,7 @@ class WebTablePage(BasePage):
             return [firstname, lastname, str(age), email, str(salary), department]
 
     def check_new_added_person(self):
-        people_list = self.element_are_present(self.locators.FULL_PEOPLE_LIST)
+        people_list = self.elements_are_present(self.locators.FULL_PEOPLE_LIST)
         data = []
         for item in people_list:
             data.append(item.text.splitlines())
