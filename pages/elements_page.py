@@ -81,7 +81,7 @@ class WebTablePage(BasePage):
     locators = WebTablePageLocators()
 
     def add_new_person(self):
-        count = 1
+        count = 3
         while count != 0:
             person_info = next(generated_person())
             firstname = person_info.firstname
@@ -99,3 +99,19 @@ class WebTablePage(BasePage):
             self.element_is_visible(self.locators.DEPARTMENT_INPUT).send_keys(department)
             self.element_is_visible(self.locators.SUBMIT).click()
             count -= 1
+            return [firstname, lastname, str(age), email, str(salary), department]
+
+    def check_new_added_person(self):
+        people_list = self.element_are_present(self.locators.FULL_PEOPLE_LIST)
+        data = []
+        for item in people_list:
+            data.append(item.text.splitlines())
+        return data
+
+    def search_some_person(self, key_word):
+        self.element_is_visible(self.locators.SEARCH_INPUT).send_keys(key_word)
+
+    def check_search_person(self):
+        delete_button = self.element_is_present(self.locators.DELETE_BUTTON)
+        row = delete_button.find_element('xpath', self.locators.ROW_PARENT)
+        return row.text.splitlines()
