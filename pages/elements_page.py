@@ -189,3 +189,45 @@ class LinksPage(BasePage):
             self.element_is_present(self.locators.BAD_REQUEST).click()
         else:
             return request.status_code
+
+    def test_created_links(self, url):
+        request = requests.get(url)
+        if request.status_code == 201:
+            self.element_is_present(self.locators.CREATED_LINK).click()
+        else:
+            return request.status_code
+
+    def test_no_content_links(self, url):
+        request = requests.get(url)
+        if request.status_code == 204:
+            self.element_is_present(self.locators.NO_CONTENT_LINK).click()
+        else:
+            return request.status_code
+
+    def test_moved_links(self, url):
+        request = requests.get(url)
+        if request.status_code == 301:
+            self.element_is_present(self.locators.MOVED_LINK).click()
+        else:
+            return request.status_code
+
+    def test_unauthorized_links(self, url):
+        request = requests.get(url)
+        if request.status_code == 401:
+            self.element_is_present(self.locators.UNAUTHORIZED_LINK).click()
+        else:
+            return request.status_code
+
+    def test_forbidden_links(self, url):
+        request = requests.get(url)
+        if request.status_code == 403:
+            self.element_is_present(self.locators.FORBIDDEN_LINK).click()
+        else:
+            return request.status_code
+
+    def test_not_found_links(self, url):
+        request = requests.get(url)
+        if request.status_code == 404:
+            self.element_is_present(self.locators.NOT_FOUND_LINK).click()
+        else:
+            return request.status_code
