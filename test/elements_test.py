@@ -109,3 +109,39 @@ class TestLinksPage:
         links_page.open()
         responce_code = links_page.check_broken_links('https://demoqa.com/bad-request')
         assert responce_code == 400
+
+    def test_created_link(self, driver):
+        links_page = LinksPage(driver, 'https://demoqa.com/links')
+        links_page.open()
+        responce_code = links_page.check_broken_links(' https://demoqa.com/created')
+        assert responce_code == 201
+
+    def test_no_content_link(self, driver):
+        links_page = LinksPage(driver, 'https://demoqa.com/links')
+        links_page.open()
+        responce_code = links_page.check_broken_links(' https://demoqa.com/no-content')
+        assert responce_code == 204
+
+    def test_moved_link(self, driver):
+        links_page = LinksPage(driver, 'https://demoqa.com/links')
+        links_page.open()
+        responce_code = links_page.check_broken_links(' https://demoqa.com/moved')
+        assert responce_code == 301
+
+    def test_unauthorized_link(self, driver):
+        links_page = LinksPage(driver, 'https://demoqa.com/links')
+        links_page.open()
+        responce_code = links_page.check_broken_links(' https://demoqa.com/unauthorized')
+        assert responce_code == 401
+
+    def test_forbidden_link(self, driver):
+        links_page = LinksPage(driver, 'https://demoqa.com/links')
+        links_page.open()
+        responce_code = links_page.check_broken_links(' https://demoqa.com/forbidden')
+        assert responce_code == 403
+
+    def test_not_found_link(self, driver):
+        links_page = LinksPage(driver, 'https://demoqa.com/links')
+        links_page.open()
+        responce_code = links_page.check_broken_links(' https://demoqa.com/invalid-url')
+        assert responce_code == 404
