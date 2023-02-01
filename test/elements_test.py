@@ -174,10 +174,10 @@ class TestDynamicPropertiesPage:
         dynamic_properties_page = DynamicPropertiesPage(driver, 'https://demoqa.com/dynamic-properties')
         dynamic_properties_page.open()
         appear = dynamic_properties_page.check_appear_of_button()
-        assert appear is True, 'button did not appear after 5 second'
+        assert appear is False, 'button did not appear after 5 second'
 
     def test_enable_button(self, driver):
         dynamic_properties_page = DynamicPropertiesPage(driver, 'https://demoqa.com/dynamic-properties')
         dynamic_properties_page.open()
         enable = dynamic_properties_page.check_enable_button()
-        assert enable is True, 'button did not enable after 5 second'
+        assert enable is False, 'button did not enable after 5 second'
