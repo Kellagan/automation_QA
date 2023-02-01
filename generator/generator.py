@@ -5,7 +5,7 @@ from faker import Faker
 from data.data import Person
 
 faker_ru = Faker('ru_RU')
-
+fake_en = Faker('En')
 Faker.seed()
 
 
@@ -20,6 +20,7 @@ def generated_person():
         email=faker_ru.email(),
         current_address=faker_ru.address(),
         permanent_address=faker_ru.address(),
+        mobile=faker_ru.msisdn(),
     )
 
 
