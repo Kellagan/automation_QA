@@ -1,1 +1,2 @@
- In this project I automate the UI of the demoqa.com on Python\Selenum
+automation_qa_course
+Прохождение обучающего курса https://www.youtube.com/c/AutomationCraft
