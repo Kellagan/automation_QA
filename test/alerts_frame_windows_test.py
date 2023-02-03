@@ -1,4 +1,4 @@
-from pages.alerts_frame_windows_page import BrowserWindowsPage, AlertsPage
+from pages.alerts_frame_windows_page import BrowserWindowsPage, AlertsPage, FramesPage
 
 
 class TestAlertsFrameWindow:
@@ -40,3 +40,8 @@ class TestAlertsFrameWindow:
             text, alert_text = alert_page.check_prompt_alert()
             assert text in alert_text, "Alert did not show up"
 
+
+class TestFramesPage:
+    def test_frames(self, driver):
+        frame_page = FramesPage(driver, 'https://demoqa.com/frames')
+        frame_page.open()

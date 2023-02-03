@@ -3,7 +3,7 @@ import time
 
 from selenium.common import UnexpectedAlertPresentException
 
-from locators.alerts_frame_windows_locators import BrowserWindowsPageLocators, AlertsPageLocators
+from locators.alerts_frame_windows_locators import BrowserWindowsPageLocators, AlertsPageLocators, FramesPageLocators
 from pages.base_pages import BasePage
 
 
@@ -56,3 +56,7 @@ class AlertsPage(BasePage):
         alert_windows.accept()
         text_result = self.element_is_present(self.locators.PROMPT_RESULT).text
         return text, text_result
+
+
+class FramesPage(BasePage):
+    locators = FramesPageLocators()
