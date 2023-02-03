@@ -31,7 +31,7 @@ class TestElements:
         def test_radio_button(self, driver):
             radio_button_page = RadioButtonPage(driver, 'https://demoqa.com/radio-button')
             radio_button_page.open()
-            radio_button_page.click_on_the_radio_button('yes')
+            radio_button_page.click_on_the_radio_button('Yes')
             output_yes = radio_button_page.get_output_result()
             radio_button_page.click_on_the_radio_button('impressive')
             output_impressive = radio_button_page.get_output_result()

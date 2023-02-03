@@ -25,10 +25,10 @@ class CheckBoxPageLocators:
 
 
 class RadioButtonPageLocators:
-    RADIOBUTTON_YES = (By.CSS_SELECTOR, 'label[class^="custom-control-label"][for="yesRadio"]')
-    RADIOBUTTON_Imp = (By.CSS_SELECTOR, 'label[class^="custom-control-label"][for="impressiveRadio"]')
-    RADIOBUTTON_NO = (By.CSS_SELECTOR, 'label[class^="custom-control-label"][for="noRadio"]')
-    OUTPUT_RESULT = (By.CSS_SELECTOR, "p span[class='text-success']")
+    YES_RADIOBUTTON = (By.CSS_SELECTOR, 'label[class^="custom-control"][for="yesRadio"]')
+    IMPRESSIVE_RADIOBUTTON = (By.CSS_SELECTOR, 'label[class^="custom-control"][for="impressiveRadio"]')
+    NO_RADIOBUTTON = (By.CSS_SELECTOR, 'label[class^="custom-control"][for="noRadio"]')
+    OUTPUT_RESULT = (By.CSS_SELECTOR, 'p span[class="text-success"]')
 
 
 class WebTablePageLocators:
