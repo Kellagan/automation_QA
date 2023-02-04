@@ -42,6 +42,7 @@ class TestAlertsFrameWindow:
 
 
 class TestFramesPage:
+
     def test_frames(self, driver):
         frame_page = FramesPage(driver, 'https://demoqa.com/frames')
         frame_page.open()
