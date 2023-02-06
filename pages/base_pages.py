@@ -18,7 +18,7 @@ class BasePage:
         return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
     # @allure.step('Find visible elements')
-    def element_are_visible(self, locator, timeout=5):
+    def elements_are_visible(self, locator, timeout=5):
         return wait(self.driver, timeout).until(EC.visibility_of_all_elements_located(locator))
 
     # @allure.step('Find a present element')
@@ -26,7 +26,7 @@ class BasePage:
         return wait(self.driver, timeout).until(EC.presence_of_element_located(locator))
 
     # @allure.step('Find present elements')
-    def element_are_present(self, locator, timeout=5):
+    def elements_are_present(self, locator, timeout=5):
         return wait(self.driver, timeout).until(EC.presence_of_all_elements_located(locator))
 
     # @allure.step('Find a not visible element')

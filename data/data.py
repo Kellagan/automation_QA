@@ -15,13 +15,12 @@ class Person:
     mobile: str = None
 
 
-#@dataclass
-#class Color:
+@dataclass
+class Color:
     color_name: list = None
 
-
-#@dataclass
-#class Date:
+    # @dataclass
+    # class Date:
     day: str = None
     month: str = None
     year: str = None
