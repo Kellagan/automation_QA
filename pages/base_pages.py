@@ -41,7 +41,7 @@ class BasePage:
     def go_to_element(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
-    #@allure.step('Double click')
+    # @allure.step('Double click')
     def action_double_click(self, element):
         action = ActionChains(self.driver)
         action.double_click(element)
@@ -72,6 +72,6 @@ class BasePage:
         action.perform()
 
     # @allure.step('Remove footer')
-    def remove_footer(self):
-        self.driver.execute_script("document.getElementsByTagName('footer')[0].remove();")
-        self.driver.execute_script("document.getElementsById('close-fixedban').remove();")
+    # def remove_footer(self):
+    # self.driver.execute_script("document.getElementsByTagName('footer')[0].remove();")
+    # self.driver.execute_script("document.getElementsById('close-fixedban').remove();")
