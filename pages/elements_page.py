@@ -1,7 +1,7 @@
 import base64
 import os
-import time
 import random
+import time
 
 import allure
 import requests
@@ -36,11 +36,11 @@ class TextBoxPage(BasePage):
 
     @allure.step('check filled form')
     def check_filled_form(self):
-        full_name = self.element_is_present(self.locators.CREATED_FULL_NAME).text.split(':')[1]
-        email = self.element_is_present(self.locators.CREATED_EMAIL).text.split(':')[1]
-        current_address = self.element_is_present(self.locators.CREATED_CURRENT_ADDRESS).text.split(':')[1]
-        permanent_address = self.element_is_present(self.locators.CREATED_PERMANENT_ADDRESS)
-        return full_name, email, current_address, permanent_address
+        output_name = self.element_is_present(self.locators.CREATED_FULL_NAME).text.split(':')[1]
+        output_email = self.element_is_present(self.locators.CREATED_EMAIL).text.split(':')[1]
+        output_cur_addr = self.element_is_present(self.locators.CREATED_CURRENT_ADDRESS).text.split(':')[1]
+        output_per_addr = self.element_is_present(self.locators.CREATED_PERMANENT_ADDRESS).text.split(':')[1]
+        return output_name, output_email, output_cur_addr, output_per_addr
 
 
 class CheckBoxPage(BasePage):

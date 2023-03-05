@@ -72,7 +72,6 @@ class BasePage:
         action.move_to_element(element)
         action.perform()
 
-    @allure.step('Remove footer')
-    def remove_footer(self):
-        self.driver.execute_script("document.getElementsByTagName('footer')[0].remove();")
-        self.driver.execute_script("document.getElementsById('close-fixedban').remove();")
+        # @allure.step('Remove footer')
+        # def remove_footer(self):
+        # self.driver.execute_script("document.getElementsByTagName('footer')[0].remove();")
